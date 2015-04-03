@@ -1,14 +1,16 @@
-PROJECTROOT=${HOME}/projects/pipeline_toolkit/http_request_parser
+PROJECTROOT=$(PIPELINE_TOOLKIT_ROOT)/http_request_parser
 INCLUDES=-I$(PROJECTROOT)/include 
-SYSLIBS = -lg2c -lm -ldl
 
-all : lib/libHttpRequestParser.so
+all : lib/libhttp_request_parser.so
 
-lib/libHttpRequestParser.so : src/http_request_parser.c include/http_request_parser.h
+lib/libhttp_request_parser.so : src/http_request_parser.c include/http_request_parser.h
 	g++ -c -Wall -Werror -fpic $(INCLUDES) src/http_request_parser.c -o lib/http_request_parser.o
-	g++ -shared -o lib/libHttpRequestParser.so lib/http_request_parser.o
+	g++ -shared -o lib/libhttp_request_parser.so lib/http_request_parser.o
+
+install:
+	mkdir lib
 
 clean:
 	rm -f lib/http_request_parser.o
-	rm -f lib/libHttpRequestParser.so
+	rm -f lib/libhttp_request_parser.so
 

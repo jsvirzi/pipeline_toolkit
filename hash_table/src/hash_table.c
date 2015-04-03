@@ -1,3 +1,11 @@
+#include <string>
+#include <vector>
+
+#include <stdio.h>
+#include <string.h>
+
+#include "hash_table.h"
+
 KeysInPlay *HashTable::first_key() {
 		if(keys_in_play == 0) return 0;
 		current_key = keys_in_play;
