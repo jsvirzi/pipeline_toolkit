@@ -1,3 +1,6 @@
+#ifndef HTTP_REQUEST_PARSER_H
+#define HTTP_REQUEST_PARSER_H
+
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -21,3 +24,4 @@ class HttpRequestParser {
 	std::vector<std::string> lines;
 };
 
+#endif
