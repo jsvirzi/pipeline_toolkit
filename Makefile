@@ -3,7 +3,7 @@
 all:
 
 install:
-	echo $(PIPELINE_TOOLKIT_ROOT) >setup.sh
+	echo "export PIPELINE_TOOLKIT_ROOT=$(PWD)" >setup.sh
 	mkdir -p $(PIPELINE_TOOLKIT_ROOT)/lib
 	cd $(PIPELINE_TOOLKIT_ROOT)/http_request_parser
 	make
